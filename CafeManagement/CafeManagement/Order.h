@@ -1,9 +1,24 @@
 #pragma once
-#include <iostream>
-#include <fstream>
-#include <cstdio>
-#include <queue>
-#include <cstdlib>
+/*
+커피메뉴 
 
-using namespace std;
+1.아메리카노 
 
+2.스무디 
+
+3.카페라떼 
+
+4.카페모카
+
+5.에스프레소
+
+6.모카라떼
+
+7.프라프치노
+
+8.바닐라라떼
+
+9.카라멜 마끼아또
+
+10.박카스
+*/
