@@ -35,13 +35,26 @@ Queue에서 주문이 pop되어 분배를 시작하면
 각 바리스타가 일을 했던 시간을 기준으로
 제일 일을 덜 한 바리스타가 주문을 먼저 받게 된다.
 
-
+totalOrderTime: 바리스타가 순수하게 커피를 탄 시간
+ability : 바리스타의 숙련도   int 형 자료형으로 생각중
+tempWorktime : 커피타는 시간   int 형 자료형으로 생각중 
+isWork : 현재 바리스타가 일을 하고 있는지 판별 bool 자료형으로 
 */
-typedef class Baristar {
-	int completeOrderTime;
+typedef class Baristar {                  //바리스타를 typedef로 한의미를 모르겟음  
+	int completeOrderTime;                //어떤의미인지 모르겟음
 	queue<order> executeList;
 	vector<order> outputList;
 
+
+	//int toMakeCoffee(int ability)  바리스타가 커피를 만드는데 걸리는시간을 계산 해주는함수
+	//void makeCoffee(order toMakeCoffee);         바리스타가 커피를 만드는 함수 
 }baristar;
+
+/*바리스타가 커피를 만드는 함수 total OrderTime 과 tempWorktime을 time에 맞추어 증가를 시켜주는 방식으로 생각함 
+void makeCoffee()         
+{
+	
+}
+*/
 
 
