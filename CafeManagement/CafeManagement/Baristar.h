@@ -23,6 +23,7 @@ coffeType : 주문받은 커피 타입
 */
 typedef struct Order {
 	int orderTime = 0;
+	int makeingTime = 0;
 	int coffeeCnt = 0;
 	string coffeeType = NULL;
 }order;
@@ -47,14 +48,15 @@ typedef class Baristar {                  //바리스타를 typedef로 한의미를 모르겟
 
 
 	//int toMakeCoffee(int ability)  바리스타가 커피를 만드는데 걸리는시간을 계산 해주는함수
-	//void makeCoffee(order toMakeCoffee);         바리스타가 커피를 만드는 함수 
+	void makeCoffee();         //바리스타가 커피를 만드는 함수 
 }baristar;
 
-/*바리스타가 커피를 만드는 함수 total OrderTime 과 tempWorktime을 time에 맞추어 증가를 시켜주는 방식으로 생각함 
+/*바리스타가 커피를 만드는 함수 total OrderTime 과 tempWorktime을 time에 맞추어 증가를 시켜주는 방식으로 생각함 */
+
 void makeCoffee()         
 {
 	
 }
-*/
+
 
 
