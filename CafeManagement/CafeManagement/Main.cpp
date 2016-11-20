@@ -24,7 +24,7 @@ int main(){
 		wholeTime++;
 		while (wholeTime == orderList.front().orderTime) {
 			auto tmp = orderList.front();
-			baristarList[0].executeList.push(tmp);
+			baristarList[0].takeOrder(tmp);
 			orderList.pop();
 		}
 	}
