@@ -1,25 +1,25 @@
 #pragma once
 /*
-커피메뉴 
+Menu
 
-1.아메리카노 
+Espresso
 
-2.스무디 
+Americano
 
-3.카페라떼 
+Cafe Latte
 
-4.카페모카
+Cafe Mocha
 
-5.에스프레소
+Vanilla Latte
 
-6.모카라떼
+Mocha Latte
 
-7.프라프치노
+Macchiato
 
-8.바닐라라떼
+Frappucino
 
-9.카라멜 마끼아또
+Smoothie
 
-10.박카스
+Herbal Tea
 
 */
