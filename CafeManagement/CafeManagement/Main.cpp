@@ -44,14 +44,18 @@ void main(void)
 				tmp.makeingTime = 9;
 			else if (strcmp(tmp.coffeeType, "바닐라라떼") == 0)
 				tmp.makeingTime = 5;
-			else if (strcmp(tmp.coffeeType, "카라멜 마끼아또") == 0)
+			else if (strcmp(tmp.coffeeType, "카라멜마끼아또") == 0)
 				tmp.makeingTime = 8;
 			else if (strcmp(tmp.coffeeType, "박카스") == 0)
 				tmp.makeingTime = 5;
+
+			orderList.push(tmp);
+			/*
 			for (int j = 1; j <= tmp.coffeeCnt; j++) //커피 수량 만큼 queue에 1개씩 나누어서 push
 			{
 				orderList.push({ tmp.orderTime,tmp.makeingTime,1,tmp.coffeeType });
 			}
+			*/
 		}
 	}
 
@@ -64,11 +68,12 @@ void main(void)
 	int time = 0;
 
 	order tmpOrder;
-	tmpOrder = orderList.pop;
+	tmpOrder = orderList.front();
+	orderList.pop();
 
 	while (1)
 	{
-		if (orderList.empty == true)
+		if (orderList.empty() == true)
 		{
 			for (int i = 0; i < m; i++)
 			{
@@ -86,7 +91,8 @@ void main(void)
 		{
 			baristerList[0].workTime += tmpOrder.makeingTime;
 
-			tmpOrder = orderList.pop;
+			tmpOrder = orderList.front();
+			orderList.pop();
 			continue;
 		}
 
@@ -107,7 +113,7 @@ void main(void)
 bool operator <(const Baristar a, const Baristar b)
 {
 	if (a.workTime == b.workTime)
-		return a.totalWorkTime > b.totalWorkTime;
+		return a.totalWorkTime < b.totalWorkTime;
 	else
-		return a.workTime > b.workTime;
+		return a.workTime < b.workTime;
 }
