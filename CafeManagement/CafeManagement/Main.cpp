@@ -34,8 +34,9 @@ int main(){
 		for (int i = 0; i < m; i++) {
 			if (baristarList[i].curOrderTime != 0) {
 				if (baristarList[i].executeList.front().makingTime != 0) {
-					baristarList[i].executeList.front().makingTime--;
-					baristarList[i].completeOrderTime++;
+					baristarList[i].executeList.front().makingTime-=1;
+					baristarList[i].completeOrderTime+=1;
+					baristarList[i].curOrderTime-=1;
 				}
 				if (baristarList[i].executeList.front().makingTime == 0) {
 					baristarList[i].executeList.pop();
@@ -63,13 +64,18 @@ int main(){
 		cout << i + 1 << " 번 째 바리스타\n";
 		cout << "총 일 한 시간 : " << baristarList[i].completeOrderTime;
 		cout << "\n만든 커피 개수 : " << baristarList[i].orderCnt;
+		cout << "\n";
 		int bSize = baristarList[i].outputList.size();
 		for (int j = 0; j < bSize; j++) {
 			cout << baristarList[i].outputList[j].orderTime << "\n";
 			cout << baristarList[i].outputList[j].coffeeType << "\n";
+			cout << baristarList[i].outputList[j].makingTime << "\n";
+			cout << "\n";
 		}
 		cout << "\n";
 	}
+	printf("%d\n");
+	return 0;
 }
 
 /*
@@ -114,7 +120,7 @@ void orderInit() {
 bool checkExit() {
 	int Size = baristarList.size();
 	for (int i = 0; i < Size; i++) {
-		if (orderList.empty() && baristarList[i].executeList.empty())
+		if (orderList.empty() && baristarList[i].executeList.empty() )
 			return false;
 	}
 	return true;

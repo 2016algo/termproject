@@ -88,9 +88,13 @@ public:
 
 	//operator overloading
 	bool operator<(const Baristar &u) const {
-		if (orderCnt == u.orderCnt)
-			return completeOrderTime < u.completeOrderTime;
-		return orderCnt < u.orderCnt;
+		if (completeOrderTime == u.completeOrderTime) {
+			if (curOrderTime == u.curOrderTime)
+				return orderCnt < u.orderCnt;
+			return curOrderTime < u.curOrderTime;
+		}
+			
+		return completeOrderTime < u.completeOrderTime;
 	}
 
 	//method
