@@ -6,13 +6,13 @@ Espresso
 
 Americano
 
-Cafe Latte
+CafeLatte
 
-Cafe Mocha
+CafeMocha
 
-Vanilla Latte
+VanillaLatte
 
-Mocha Latte
+MochaLatte
 
 Macchiato
 
@@ -20,6 +20,6 @@ Frappucino
 
 Smoothie
 
-Herbal Tea
+HerbalTea
 
 */
