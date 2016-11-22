@@ -17,24 +17,29 @@ bool checkExit();
 int main(){
 	orderInit();
 
-	//int tmpcnt = 1;
-	//queue<order> q = orderList;
-	//while (!q.empty()) {
-	//	auto tmp = q.front();
-	//	cout << tmpcnt++ << " 번 째 주문\n";
-	//	cout << "주문 한 시간 : " << tmp.orderTime << " \n주문한 커피 종류 : " << tmp.coffeeType << "\n해당 커피 만드는 시간" << tmp.makingTime <<"\n";
-	//	q.pop();
-	//}
+
+	int tmpcnt = 1;
+	queue<order> q = orderList;
+	while (!q.empty()) {
+		auto tmp = q.front();
+		cout << tmpcnt++ << " 번 째 주문\n";
+		cout << "주문 한 시간 : " << tmp.orderTime << " \n주문한 커피 종류 : " << tmp.coffeeType << "\n해당 커피 만드는 시간" << tmp.makingTime <<"\n";
+		q.pop();
+	}
+
 	while (checkExit()) {
 		//바리스타 일 진행시키기
+
+		//printf("어디서?\n");
 		for (int i = 0; i < m; i++) {
-			if (baristarList[i].curOrderTime) {
-				if (baristarList[i].executeList.front().makingTime) {
+			if (baristarList[i].curOrderTime != 0) {
+				if (baristarList[i].executeList.front().makingTime != 0) {
 					baristarList[i].executeList.front().makingTime--;
 					baristarList[i].completeOrderTime++;
 				}
-				if (baristarList[i].executeList.front().makingTime == 0)
+				if (baristarList[i].executeList.front().makingTime == 0) {
 					baristarList[i].executeList.pop();
+				}
 			}
 		}
 
@@ -57,7 +62,7 @@ int main(){
 	for (int i = 0; i < m; i++) {
 		cout << i + 1 << " 번 째 바리스타\n";
 		cout << "총 일 한 시간 : " << baristarList[i].completeOrderTime;
-		cout << "\n 만든 커피 개수 : " << baristarList[i].orderCnt;
+		cout << "\n만든 커피 개수 : " << baristarList[i].orderCnt;
 		int bSize = baristarList[i].outputList.size();
 		for (int j = 0; j < bSize; j++) {
 			cout << baristarList[i].outputList[j].orderTime << "\n";
@@ -93,12 +98,11 @@ void orderInit() {
 		inFile >> k; //주문 커피 종류
 		int orderTime, coffeeCnt;
 		string coffeeType;
-		//order tmp;
-		inFile >> /*tmp.*/orderTime; // 주문 시간
+		inFile >> orderTime; // 주문 시간
 		for (int i = 0; i < k; i++) {
-			inFile >> /*tmp.*/coffeeType >> /*tmp.*/coffeeCnt; //커피 타입과 수량 받아옴
-			for (int j = 1; j <= /*tmp.*/coffeeCnt; j++) { //커피 수량 만큼 queue에 1개씩 나누어서 push
-				order cur(/*tmp.*/orderTime, 1, /*tmp.*/coffeeType);
+			inFile >> coffeeType >> coffeeCnt; //커피 타입과 수량 받아옴
+			for (int j = 1; j <= coffeeCnt; j++) { //커피 수량 만큼 queue에 1개씩 나누어서 push
+				order cur(orderTime, 1, coffeeType);
 				cur.setMakingTime();
 				orderList.push(cur);
 			}

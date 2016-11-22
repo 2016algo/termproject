@@ -95,14 +95,16 @@ public:
 
 	//method
 	void takeOrder(order o) {
+		//printf("테이크오더 실행 됨\n");
 		executeList.push(o);
+		//printf("실행 후 queue size %d\n", executeList.size());
 		outputList.push_back(o);
+		curOrderTime += o.makingTime;
 		orderCnt++;
 	}
 
 	void checkOrder(int wholeTime) {
 		int executeTime = wholeTime - executeList.front().orderTime;
-
 	}
 }baristar;
 
