@@ -120,9 +120,9 @@ void orderInit() {
 bool checkExit() {
 	int Size = baristarList.size();
 	for (int i = 0; i < Size; i++) {
-		if (orderList.empty() && baristarList[i].executeList.empty() )
-			return false;
+		if (!orderList.empty() || !baristarList[i].executeList.empty() || baristarList[i].curOrderTime != 0)
+			return true;
 	}
-	return true;
+	return false;
 }
 
