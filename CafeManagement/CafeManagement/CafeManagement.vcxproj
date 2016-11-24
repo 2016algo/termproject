@@ -150,10 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Baristar.h" />
-    <ClInclude Include="Order.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="coffee.txt" />
     <Text Include="input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
