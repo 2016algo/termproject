@@ -21,7 +21,6 @@ Cafe Menu
 */
 
 #include <cstdio>
-#include <string>
 #include <iostream>
 #include <fstream>
 #include "Baristar.h"
@@ -82,9 +81,7 @@ int main(){
 		distributeOrder();
 		wholeTime++;
 	}
-
-	//일 제일 적게한 바리스타 찾기
-	//sort(baristarList.begin(), baristarList.end());
+	sort(baristarList.begin(), baristarList.end());
 	//for (int i = 0; i < m; i++) {
 	//	cout << i + 1 << " 번 째 바리스타\n";
 	//	cout << "총 일 한 시간 : " << baristarList[i].completeOrderTime;
@@ -132,7 +129,9 @@ void orderInit() {
 bool checkExit() {
 	int Size = baristarList.size();
 	for (int i = 0; i < Size; i++) {
-		if (!orderList.empty() || !baristarList[i].executeList.empty() || baristarList[i].curOrderTime != 0)
+		if (!orderList.empty() || 
+			!baristarList[i].executeList.empty() || 
+			baristarList[i].curOrderTime != 0)
 			return true;
 	}
 	return false;

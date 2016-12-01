@@ -29,4 +29,7 @@
       <Filter>리소스 파일</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="D:\Download\CafeManagement.png" />
+  </ItemGroup>
 </Project>
